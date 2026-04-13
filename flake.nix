@@ -41,11 +41,6 @@
               nodejs
               typescript
             ];
-            # fix for python libs, e.g. numpy
-            LD_LIBRARY_PATH = lib.makeLibraryPath [
-              zlib
-              stdenv.cc.cc.lib
-            ];
           };
         };
       });
