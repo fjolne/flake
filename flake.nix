@@ -40,6 +40,8 @@
               # node
               nodejs
               typescript
+              # go
+              go
             ];
           };
         };
