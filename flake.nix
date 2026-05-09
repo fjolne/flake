@@ -27,6 +27,10 @@
           inherit system;
           config = { allowUnfree = true; };
         };
+        cargoLinkerEnv = {
+          x86_64-linux = "CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER";
+          aarch64-linux = "CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER";
+        }.${system};
       in
       {
         devShells = with pkgs; {
@@ -43,6 +47,7 @@
               # go
               go
             ];
+            "${cargoLinkerEnv}" = "clang";
           };
         };
       });
